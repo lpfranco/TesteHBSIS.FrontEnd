@@ -1,0 +1,44 @@
+<div>
+    <label>Cidade:  
+        <input placeholder="Insira o nome da cidade." [(ngModel)]="city.cityName">
+    </label>
+    <button (click)="save()">Salvar</button>
+</div>
+<br>
+<div>
+    <table>
+        <thead>
+            <td colspan=2>Cidade</td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let city of cityList">
+            <td>{{city.cityName}}</td>
+            <td>
+                <button (click)="remove(city.id)">Remover</button>
+                <button id="forecast" (click)="getForecast(city.cityName)">Detalhes Previsão</button>
+            </td>
+        </tr>
+        </tbody>
+        
+        <br>
+
+        <div>
+            <table>
+                <tbody *ngFor="let f of forecastList">
+                    <tr>
+                        <label>Cidade: {{f.city}}</label>
+                        <br>Horario:{{f.dateTimeForecast}}
+                        <br>Temperatura(°C): {{f.temperature}}
+                        <br>Máxima(°C): {{f.maxTemperature}}
+                        <br>Mínima(°C): {{f.minTemperature}}
+                        <br>Humidade(%): {{f.humidity}}
+                        <br>Descrição: {{f.description}}
+                        <br>Velocidade vento(m/s): {{f.windSpeed}}
+                        <br>Direção do vento(graus): {{f.windDegree}}           
+                        <br>----------------------------------------------------                     
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </table>
+</div>

@@ -1,0 +1,14 @@
+table{
+    width: 100%;
+}
+table thead{
+    background-color: darkgray;
+}
+
+table td{
+    border: 1px solid;
+}
+
+#forecast{
+    margin-left: 5px;
+}
